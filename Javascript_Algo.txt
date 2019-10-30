@@ -825,7 +825,7 @@ chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]]
 @ Code Explanation
 
 - A rray smaller than size is returned nested.
-- For any array larger than size, it is split in two. First segment is nested and concatenated with second segment which makes a recursive call.
+- For any array larger than size, it is split in two. First segment is nested and concatenated with second segment which makes a recursive call...
 
 
 

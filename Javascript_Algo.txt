@@ -1,0 +1,879 @@
+**The 10 days of Javascript: Day 0**
+
+# Object --
+    @ is like a library of specific 
+      topic or module.
+    @ to create an object you should make a variable with let
+      for ex:
+
+      let myName = {
+         name: "Erick",
+         age: 40,
+	 height: 5'2",
+         study() {
+           alert("hows your programming study?")
+	 } 
+         skills: {
+           instrument: "e-guitar",
+	   hobby: "programming"
+	 }
+      }
+
+!!Important NOTE!!!
+	You can also nest object and make function inside of an object.
+ 
+push() - add item at the end of array.
+splice() - remove item in the array thru indexing.
+pop() - remove item at the end of array.
+shift() - add item at the beginning of an array.
+unshift() - add item to the beginning of array.
+slice() - takes all item in string or numbers by indexing.
+
+
+**Day 8 Variable Scope & Context**
+
+var - use a function block
+let - use a scope block
+ 
+   (Note:)
+	- it is much better to use let instead of var.
+
+*"Impt. Note"*
+  
+  Scope - is for variables
+  Context - is for objects.
+
+**  =>/arrow function can be use in a single line w/o curly brackets and return.
+
+$$$ Truthy and Falsy Values $$$
+
+* Falsy Values:
+  - false
+  - 0
+  - ""
+  - undefined
+  - NaN
+ ** Everyting Else is Truthy **
+
+* Number("42")
+    - convert a string to a number.
+
+@@ LOOPS @@
+    
+      ## Examples ##
+
+**While Loop**
+
+var str = "hello";
+var count = 0;
+
+while(count <= str.length) {
+  console.log(str[count]);
+  count++;
+}
+
+** For Loop **
+var str = "hello"
+
+for(var i = 0; i < str.length; i++ ) {
+  console.log(str[i]);
+}
+//This will print each letter of string
+
+
+
+
+for(var i = 10; 1 <= 40; i++) {
+   if(i % 2 === 0) {
+   console.log(i);
+   }
+}  
+//This will print all even number  
+
+for(var i = 5; i <= 50; i++) {
+   if(i % 5 === 0 && i % 3 === 0) {
+     console.log(i);
+   }
+}   
+//This will print numbers divisible by 3 & 5
+
+
+## Function ##
+
+@Example 00:
+
+function capitalize(str) {
+  
+   return str.charAt(0).toUpperCase() + str.slice(1);
+
+}
+
+var city = "paris";
+var capital = capitalize(city);
+
+@Example 01:
+
+function test(x, y) {
+   return y - x;
+}
+test(10, 40) // ans: 30
+**impt note:
+     - always base on the arngements of arguments
+   when calling a function.
+
+@ Example 02:
+
+function test1(x) {
+   return x * 2; //return 80
+   console.log(x); //will not run
+   return x/2; //will not run
+}
+function(40);
+ **impt. note**
+      - only the first return will
+    run and the succeeding will not.
+
+          ################
+
+function isEven(num) {
+   if(num % 2 === 0) {
+      return true;
+   }
+   else {
+      return false;
+   }
+}
+         || OR ||
+
+function isEven(num) {
+   return num % 2 === 0;
+}
+
+          #################
+
+function factorial(num) {
+   //define a result variable
+
+   var result = 1;
+
+   //calculate factorial and store value in result.
+   
+   //declare var its impt....
+   for(var i = 2; i <= num; i++;) {
+      result = result * i;
+
+      //return the result variable.
+   }
+   return result;
+}
+
+ !!! What I have learned:
+	- you need to var inside the function if your making a factorial.
+
+function factorial(num) {
+	//define a variable result,it needs to be inside the function!!
+	var result = 1;
+	//calculate a factorial and store in result variable
+	for (var i = 2; i <= num; i++) {
+		result *= i;
+	}
+	return result; //return result variable
+}
+
+// var myStr = '';
+// var newStr = myStr.replace(/-/g, '_');
+
+//changing characters in javascript by regex
+
+function kebabToSnake(myStr) {
+   var newStr = myStr.replace(/-/g, '_'); //old char, new char.
+   return newStr;
+  
+}
+
+    ***** Arrays *****
+EX. 00
+
+var numbers = [22, 67,96,33, 88];
+
+console.log(numbers[numbers.length]);
+// will result undefined bec the ind is only 4
+
+EX. 01
+
+var friendGroups = [
+  ["Harry", "Ron", "Hermione"],
+  ["Malfoy", "Crabbe", "Goyle"],
+  ["Mooney", "Wormtail", "Prongs"]
+];
+console.log(friendGroups[2] [1]);
+//it will output "Wormtail"
+
+
+TO DO LIST****
+
+var todos = ["walk the dog"];
+
+var input = prompt("What would you like to do? ");
+
+while(input !== "quit"){
+	if(input === "list") {
+	   console.log(todos);
+        } else if(input === "new") {
+        //ask user for new todos
+        var newTodo = prompt("Enter a new todo");
+        todos.push(newTodo); //it will add a new todo on array
+        }
+
+        input = prompt("What would you like to do?")
+}
+console.log("OK, YOU QUIT THE APP")
+
+ForEach Loop ****
+
+var colors = ["red","orange","yellow", "green"];
+
+colors.forEach(function(color){
+   console.log(color)
+});
+
+var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+
+
+
+for(var i = 0; i <= numbers.length; i++){
+
+   if(i % 3 === 0){
+
+      console.log(i);
+
+   };
+
+};
+
+numbers.forEach(function(num)){
+   console.log("This is number " + num)
+}
+
+Problem Set*****
+
+00. printReverse()
+
+* Write a function printReverse() that takes an array a an argumet and prints out the elenensts in the array in revese order(don't actually reverse the array itself)
+
+function printReverse(arr){
+   for(var i = arr.length - 1; i >= 0; i--){
+      console.log(arr[i])
+   }
+}
+
+
+01. isUniform()
+ * Write a function isUniform() which takes an array as an argument and return true if all element in the array are identical
+
+function isUniform(arr){
+   var first = arr[0];
+   for(var i = 1; i < arr.length; i++){
+      if(arr[i] !== first){
+         return false;
+      }
+   }
+   return true;
+}
+
+02. sumArray()
+* Write a function sumArray() that accepts an array of numbers and returns the sum of all numbers in the array.
+
+function sumArray(arr){
+   var total = 0;
+   arr.forEach(function(element){
+      total += element;
+   });
+   return total;
+}
+
+03. max()
+* Write a function max() that accepts an array of numbers and returns the maximum number in the array.
+
+function max(arr){
+   var max = arr[0];
+   for(var i = 1; i < arr.length; i++){
+      if(arr[i] > max){
+         max = arr[i]
+      }
+   }
+   return max;
+}
+
+max([3,6,21,20])// return 21
+max([1,4,3,7,6])//return 7
+
+*** Using Objects for lookups *** 
+
+// Setup
+
+function phoneticLookup(val) {
+
+  var result = "";
+
+  
+// Only change code below this line
+
+ 
+
+
+ var lookup = {
+
+    "alpha": "Adams",
+
+    "bravo": "Boston",
+
+    "charlie": "Chicago",
+
+    "delta": "Denver",
+
+    "echo": "Easy",
+
+    "foxtrot": "Frank"
+
+  }
+  
+  result = lookup[val];
+
+
+  return result;
+}
+
+
+
+// Change this value to test
+
+phoneticLookup("charlie");//will return "Chicago"
+
+
+
+ 
+
+// Setup
+var collection = {
+    "2548": {
+      "album": "Slippery When Wet",
+      "artist": "Bon Jovi",
+      "tracks": [ 
+        "Let It Rock", 
+        "You Give Love a Bad Name" 
+      ]
+    },
+    "2468": {
+      "album": "1999",
+      "artist": "Prince",
+      "tracks": [ 
+        "1999", 
+        "Little Red Corvette" 
+      ]
+    },
+    "1245": {
+      "artist": "Robert Palmer",
+      "tracks": [ ]
+    },
+    "5439": {
+      "album": "ABBA Gold"
+    }
+};
+// Keep a copy of the collection for tests
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+// Only change code below this line
+function updateRecords(id, prop, value) {
+  if (prop === "tracks" && value !== "") {
+   if(collection[id][prop]) {
+    collection[id][prop].push(value);
+   }
+   else {
+    collection[id][prop]=[value];
+   }
+  } else if (value !== "") {
+    collection[id][prop] = value;
+  } else {
+    delete collection[id][prop];
+  }
+
+  return collection;
+}
+
+// Alter values below to test your code
+updateRecords(5439, "artist", "ABBA");
+
+
+
+
+Note
+
+
+***** DOM Manipulation ******
+
+<<< DOM Selectors >>>
+
+* document.getElementbyId("idName")
+
+* document.getElementByClassName("className")
+
+* document.getElementByTagName("tagName")
+  - ex: document.getElementByTagName("li")
+      * return all tagname in a list like li,h1 etc
+
+* document.querySelector("")
+  - return the very first elements u shud include # when selecting id name
+ 
+* document.querySelectorAll()
+
+
+     ***** Manipulating element *****
+
+  < method 1 >
+var tag = document.getElementById("highlight");
+tag.style.color = "lue";
+tag.style.border = "10px solid red";
+
+  < method 2 >
+//Define a class in css and then target it in JS
+
+.some-class {
+    color: blue;
+    border: 10px solid red;
+};
+
+var tag = document.getElementById("hightlight");
+//ADD THE NEW CLASS TO THE SELECTED ELEMENT
+tag.classlist.add("some-class"); //wthout dot
+
+
+*** ways to manipulate in js ***
+
+> tag.classlist.add("className")
+> tag.classlist.remove("className")
+> tag.classlist.toggle("className")
+
+  !!! NOte "tag" can be any elements p,a,li,h1 etc..
+
+**** FREECODECAMP CHALLENGES ****
+
+@ Basic Algorithm Scripting: Finders KeepersPassed
+
+--Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.
+
+Solution #1:
+
+function findElement(arr, func) {
+   let num = 0;
+   for(let i = 0; i < arr.length; i++) {
+     let num = arr[i];
+     if(func(num)) {
+       return arr[i];
+     }
+   }
+   return undefined;
+}
+
+Solution #2:
+
+function findElement(arr, func) {
+  
+   return arr.find(func);
+}
+
+@ Basic Algorithm Scripting: Title Case a SentencePassed
+
+--Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+
+Solution #1:
+
+function titleCase(str) {
+  let splitStr = str.toLowerCase().split(' ');
+  for(let i = 0; i < str.length; i++) {
+    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].slice(1);
+  }
+  return splitStr.join(' ');
+}
+
+console.log(titleCase("I'm a little tea pot"));
+
+Solution #2:
+
+function titleCase(str) {
+  
+  return str.toLowerCase().split(' ').map(word => 
+     word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
+console.log(titleCase("I'm a little tea pot"));
+
+
+@ Basic Algorithm Scripting: Slice and Splice
+
+--You are given two arrays and an index.
+
+Use the array methods slice and splice to copy each element of the first array into the second array, in order.
+
+Begin inserting elements at index n of the second array.
+
+Return the resulting array. The input arrays should remain the same after the function runs.
+
+Solution #1:
+
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let newArr = arr2.slice();
+  newArr.splice(n, 0, ...arr1)  
+  return newArr; 
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+### EXPLANATION 
+
+@ Since our goal is to return the new array with out altering arr1 or arr2 we create a localArr and add all the items from arr2 using the slice() function
+
+@ Since the splice() function will mutate (alter) arrays and can be used to add new elements we will use it to add the contents of arr1 into localArr. n is the starting position where our content will be inserted. We won’t be deleting any elements so the next argument is 0. Then we add the entire contents of arr1 using spread syntax ....
+
+@ localArr is returned and the function is complete.
+
+Solution #2:
+
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let localArray = arr2.slice();
+  for (let i = 0; i < arr1.length; i++) {
+    localArray.splice(n, 0, arr1[i]);
+    n++;
+  }
+  return localArray;
+}
+
+### EXPLANATION ###
+
+@ Code Explanation
+Our goal is to take all of the elements from arr1 and insert them into arr2 starting with index position n. At the same time we must ensurethat neither arr or arr2 have been mutated.
+
+@ Using the slice() function we can create an exact replica of arr2 and assign the result of the operation to a variable, localArray.
+
+@ Now that we have an array that we can mutate on, we can iterate through every item in the first array. For each item in the first array we can use the splice() function to insert the item into index n of localArray.
+
+@ We increment the index n by one. This will ensure that every item from the arr1 is inserted into localArray in the proper index position.
+
+@ Finally, we return the localArray and end the function
+
+	********************************
+
+@ Basic Algorithm Scripting: Falsy Bouncer
+Remove all falsy values from an array.
+
+Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
+Hint: Try converting each value to a Boolean.
+
+Solution #1:
+
+function bouncer(arr) {
+  let newArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i]) newArray.push(arr[i]);
+  }
+  return newArray;
+}
+
+### Code Explanation
+
+@ We create a new empty array.
+@ We use a for cycle to iterate over all elements of the provided array (arr).
+@ We use the if statement to check if the current element is truthy 578 or falsy 26.
+@ If the element is truthy, we push it to the new array (newArray). @ This result in the new array (newArray) containing only truthy elements.
+@ We return the new array (newArray).
+
+Solution #2:
+
+function bouncer(arr) {
+  return arr.filter(Boolean);
+}
+
+### Code Explanation
+
+- The Array.prototype.filter method expects a function that returns a Boolean value which takes a single argument and returns true for truthy 578 value or false for falsy 26 value. Hence we pass the built-in Boolean function.
+
+
+@ Basic Algorithm Scripting: Where do I Belong
+
+- Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+
+- For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+
+- Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2)
+
+Solution #1:
+
+function getIndexToIns(arr, num) {
+  arr.sort(function(a, b) {
+    return a - b;
+  });
+
+  for (var a = 0; a < arr.length; a++) {
+    if (arr[a] >= num) return a;
+  }
+
+  return arr.length;
+}
+
+@ Code Explanation
+
+- First I sort the array using .sort(callbackFunction) to sort it by lowest to highest, from left to right.
+- Then I use a for loop to compare the items in the array starting from the smallest one. When an item on the array is greater than the number we are comparing against, then we return the index as an integer.
+
+Solution #2:
+
+function getIndexToIns(arr, num) {
+  arr.push(num);
+  arr.sort(function(a, b) {
+    return a - b;
+  });
+  return arr.indexOf(num);
+}
+
+@ Code Explanation
+- First we add the number num to the array using push() which adds it as the last element of the array.
+- Then we use sort() with the callback function function(a, b){return a-b} to sort the numbers in ascending order.
+- Lastly we return the postion or index of num in the array with the indexOf() function.
+
+
+@ Basic Algorithm Scripting: Mutations
+- Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+
+- For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+
+- The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
+
+- Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+
+Solution #1 (PROCEDURAL):
+
+function mutation(arr) {
+  var test = arr[1].toLowerCase();
+  var target = arr[0].toLowerCase();
+  for (var i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i]) < 0) return false;
+  }
+  return true;
+}
+@ Code Explanation
+- First we make the two strings in the array lowercase. test will hold what we are looking for in target.
+- Then we loop through our test characters and if any of them is not found we return false.
+
+- If they are all found, the loop will finish without returning anything and we get to return true.
+
+Solution #2 (DECLARATIVE):
+
+Declarative
+
+function mutation(arr) {
+  return arr[1]
+    .toLowerCase()
+    .split("")
+    .every(function(letter) {
+      return arr[0].toLowerCase().indexOf(letter) != -1;
+    });
+}
+
+@ Code Explanation
+- Grab the second string, lowercase and turn it into an array; then make sure every one of its letters is a part of the lowercased first string.
+
+- Every will basically give you letter by letter to compare, which we do by using indexOf on the first string. indexOf will give you -1 if the current letter is missing. We check that not to be the case, for if this happens even once every will be false.
+
+@ Basic Algorithm Scripting: Chunky Monkey
+
+- Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+
+***  Hints
+
+@ Hint 1
+The links above suggest to use Array.push(), so let’s start by first creating a new array to store the smaller arrays we will soon have like this:
+
+var newArray = [];
+
+@ Hint 2
+Next we’ll need a for loop to loop through arr.
+
+@ Hint 3
+Finally, we need a method to do the actual splitting and we can use Array.slice() to do that. The key to this Algorithm is understanding how a for loop, size, Array.slice() and Array.push() all work together.
+
+Solution #1:
+
+function chunkArrayInGroups(arr, size) {
+  var temp = [];
+  var result = [];
+
+  for (var a = 0; a < arr.length; a++) {
+    if (a % size !== size - 1) temp.push(arr[a]);
+    else {
+      temp.push(arr[a]);
+      result.push(temp);
+      temp = [];
+    }
+  }
+
+  if (temp.length !== 0) result.push(temp);
+  return result;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]]
+
+@ Code Explanation
+
+- Firstly, we create two empty arrays called temp and result, which we will eventually return.
+- Our for loop loops until a is equal to or more than the length of the array in our test.
+- Inside our loop, we push to temp using temp.push(arr[a]); if the remainder of a / size is not equal to size - 1.
+- Otherwise, we push to temp, push temp to the result variable and reset temp to an empty array.
+- Next, if temp isn’t an empty array, we push it to result.
+- Finally, we return the value of result.
+
+Solution #2:
+
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  var arr2 = [];
+  for (var i = 0; i < arr.length; i += size) {
+    arr2.push(arr.slice(i, i + size));
+  }
+  return arr2;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]]
+
+@ Code Explanation
+
+- First, we create an empty array arr2 where we will store our ‘chunks’.
+- The for loop starts at zero, increments by size each time through the loop, and stops when it reaches arr.length.
+- Note that this for loop does not loop through arr. Instead, we are using the loop to generate numbers we can use as indices to slice the array in the right locations.
+- Inside our loop, we create each chunk using arr.slice(i, i+size), and add this value to arr2 with arr2.push().
+- Finally, we return the value of arr2.
+
+Solution #3:
+
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  var newArr = [];
+  var i = 0;
+
+  while (i < arr.length) {
+    newArr.push(arr.slice(i, i + size));
+    i += size;
+  }
+  return newArr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+@ Code Explanation
+
+- Firstly, we create two variables. newArr is an empty array which we will push to. We also have the i variable set to zero, for use in our while loop.
+
+- Our while loop loops until i is equal to or more than the length of the array in our test.
+
+- Inside our loop, we push to the newArr array using arr.slice(i, i+size). For the first time it loops, it will look something like:
+
+newArr.push(arr.slice(1, 1+2))
+
+- After we push to newArr, we add the variable of size onto i.
+
+- Finally, we return the value of newArr.
+
+Solution #4:
+
+function chunkArrayInGroups(arr, size) {
+  var newArr = [];
+  while (arr.length) {
+    newArr.push(arr.splice(0, size));
+  }
+  return newArr;
+}
+
+@ Code Explanation
+
+- Firstly, we create a variable. newArr is an empty array which we will push to.
+- Our while loop loops until the length of the array in our test is not 0.
+- Inside our loop, we push to the newArr array using arr.splice(0, size).
+- For each iteration of while loop, it deletes size number of elements from the front of arr and push them as an array to newArr.
+- Finally, we return the value of newArr.
+
+
+Solution #5:
+
+function chunkArrayInGroups(arr, size) {
+  if (arr.length <= size) {
+    return [arr];
+  } else {
+    return [arr.slice(0, size)].concat(
+      chunkArrayInGroups(arr.slice(size), size)
+    );
+  }
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2) should return [["a", "b"], ["c", "d"]]
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]]
+
+@ Code Explanation
+
+- A rray smaller than size is returned nested.
+- For any array larger than size, it is split in two. First segment is nested and concatenated with second segment which makes a recursive call.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

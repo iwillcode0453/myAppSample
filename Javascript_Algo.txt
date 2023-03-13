@@ -388,6 +388,7 @@ var collection = {
 var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
+// Solution #1
 function updateRecords(id, prop, value) {
   if (prop === "tracks" && value !== "") {
    if(collection[id][prop]) {
@@ -404,6 +405,23 @@ function updateRecords(id, prop, value) {
 
   return collection;
 }
+
+// Solution #2
+
+function updateRecord(records, id, prop, value) {
+  if (prop !== "tracks" && value !== "") {
+    records[id][prop] = value;
+  } else if (records[id].hasOwnProperty("tracks") === false) {
+    records[id][prop] = [value];
+  } else if (prop === "tracks" && value !== "") {
+    records[id][prop].push(value);
+  } else {
+    delete records[id][prop];
+  }
+  return records;
+}
+
+
 
 // Alter values below to test your code
 updateRecords(5439, "artist", "ABBA");

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyclist Survey</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">
+      Thank you for taking the time to improve our platform.
+    </p>
+
+    <form id="survey-form">
+      <fieldset class="first-fieldset">
+        <label id="name-label" for="name">
+          <p>Name</p>
+          <input
+            id="name"
+            type="text"
+            placeholder=" Enter your name"
+            required
+          />
+        </label>
+        <label for="email" id="email-label">
+          <p>Email</p>
+          <input
+            id="email"
+            type="email"
+            placeholder=" Enter your email"
+            required
+          />
+        </label>
+        <label for="number" id="number-label">
+          <p>Age (optional)</p>
+          <input
+            id="number"
+            type="number"
+            min="18"
+            max="65"
+            placeholder=" Age"
+          />
+        </label>
+        <label>
+          <p>Which option best describes your current role?</p>
+
+          <select id="dropdown" name="role" required>
+            <option disabled select value>Select a role</option>
+            <option value="1">Student</option>
+            <option value="2">Full Time Job</option>
+            <option value="3">Full Time Learner</option>
+            <option value="4">Prefer not to say</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset class="second-fieldset">
+        <label class="recommend">
+          <p>Would you recommend freecodecamp to a friend?</p>
+          <input
+            name="recommendation"
+            class="recommend"
+            type="radio"
+            value="recommendation"
+          /> Definitely
+        </label>
+        <label class="recommend">
+          <input
+            name="recommendation"
+            class="recommend"
+            type="radio"
+            value="recommendation"
+          /> Maybe
+        </label>
+        <label class="recommend">
+          <input
+            name="recommendation"
+            class="recommend"
+            type="radio"
+            value="recommendation"
+          /> Not sure
+        </label>
+      </fieldset>
+      <fieldset class="third-fieldset">
+        <label>
+          <p>What is your favorite feature of freecodecamp?</p>
+          <select id="dropdown" name="feature" required>
+            <option disabled select value>Select an option</option>
+            <option value="challenges">Select an option</option>
+            <option value="challenges">Challenges</option>
+            <option value="projects">Projects</option>
+            <option value="community">Community</option>
+            <option value="openSource">Open Source</option>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset class="fourth-fieldset">
+        <label class="recommend">
+          <p>
+            What would you like know more about cycling? (Check all that apply)
+          </p>
+          <input
+            name="cycling"
+            class="recommend"
+            type="checkbox"
+            value="cycling"
+          /> Roadbike
+        </label>
+        <label class="recommend">
+          <input
+            name="recommendation"
+            class="recommend"
+            type="checkbox"
+            value="cycling"
+          /> Mountain bike
+        </label>
+        <label class="recommend">
+          <input
+            name="recommendation"
+            class="recommend"
+            type="checkbox"
+            value="cycling"
+          /> Gravel bike
+        </label>
+        <label class="comment"
+          >Tell me what you think at the comment box..
+          <textarea
+            name="comment"
+            rows="9"
+            cols="60"
+            placeholder=" Place your comment here..."
+          ></textarea>
+        </label>
+      </fieldset>
+      <input type="submit" value="Submit" id="submit" />
+    </form>
+  </body>
+</html>
